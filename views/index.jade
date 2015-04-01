@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title Mailgun Transactional demo in NodeJS
+    body
+        p Welcome to a Mailgun form
+        form(id="mgform")
+            label(for="mail") Email
+            input(type="text" id="mail" placeholder="Youremail@address.com")
+            button(value="bulk" onclick="mgform.hid=this.value") Send transactional
+            button(value="list" onclick="mgform.hid=this.value") Add to list
+            button(value="inv" onclick="mgform.hid=this.value") Send invoice
+        script(type="text/javascript" src="main.js")

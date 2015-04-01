@@ -1,0 +1,14 @@
+{
+  "name": "mailgunner",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4",
+    "jade": "*",
+    "mailgun-js": "0.5",
+    "node-config": "0.0.2"
+  }
+}
