@@ -1,7 +1,7 @@
 //We're using the express framework and the mailgun-js wrapper
 var express = require('express');
 var Mailgun = require('mailgun-js');
-var config = require('node-config');
+var config = require('config');
 //init express
 var app = express();
 
