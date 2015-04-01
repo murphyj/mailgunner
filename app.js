@@ -7,13 +7,13 @@ var app = express();
 
 
 //Your api key, from Mailgun’s Control Panel
-var api_key = 'key-b8ae87bf4e1eabaf95b1ddab4944dc60';
+var api_key = config.get('Mailgun.apiKey');
 
 //Your domain, from the Mailgun Control Panel
-var domain = 'devangst.com';
+var domain = config.get('Mailgun.domain');
 
 //Your sending email address
-var from_who = 'developerangst@gmail.com';
+var sender = config.get('Mailgun.sender');
 
 //Tell express to fetch files from the /js directory
 app.use(express.static(__dirname + '/js'));
@@ -45,7 +45,7 @@ app.get('/submit/:mail', function(req,res) {
 
     var data = {
     //Specify email data
-      from: from_who,
+      from: sender,
     //The email to contact
       to: req.params.mail,
     //Subject and text data
