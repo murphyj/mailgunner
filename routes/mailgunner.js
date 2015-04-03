@@ -9,9 +9,6 @@ var router = express.Router(),
     sender  = config.get('Mailgun.sender');
 
 router.route('/submit/:mail').post(function(req,res) {
-    console.log('submitting');
-    console.log('req.body', req);
-
     var mailgun = new Mailgun({apiKey: api_key, domain: domain});
     var name = req.body.name,
         email = req.body.email,
@@ -32,15 +29,12 @@ router.route('/submit/:mail').post(function(req,res) {
       html: htmlBody
     }
 
-    console.log('Sending data', data);
-
     mailgun.messages().send(data, function (err, body) {
         if (err) {
             res.send('error', { error : err});
-            console.log("got an error: ", err);
+            console.log("Error trying to send email: ", err);
         }
         else {
-            console.log(body);
             res.send("OK");
         }
     });
