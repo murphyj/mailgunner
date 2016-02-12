@@ -109,5 +109,5 @@ If the certificat fails to generate, you may need to manually create the `.well-
 
 and then add the `acme-challenge` directory:
 
-  cd .well-known
-  mkdir acme-challenge
+    cd .well-known
+    mkdir acme-challenge
