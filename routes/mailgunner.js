@@ -8,6 +8,11 @@ var router = express.Router(),
     domain  = config.get('Mailgun.domain'),
     sender  = config.get('Mailgun.sender');
 
+router.route('/').get(function(req,res) {
+  res.send("Please send a post request");
+});
+
+
 router.route('/submit/:mail').post(function(req,res) {
     var mailgun = new Mailgun({apiKey: api_key, domain: domain});
     var name = req.body.name,

@@ -29,8 +29,8 @@ Your `default.json` should contain:
 ```
 {
   "Mailgun": {
-    "apiKey":  "YOUR_API_KEY",
-    "domain":   "http://yourdomain.com",
+    "apiKey": "YOUR_PRIVATE_API_KEY",
+    "domain": "yourdomain.com",
     "sender": "your-email@gmail.com"
   }
 }
@@ -88,3 +88,26 @@ Response:
 You should be all set up now. All you need to do is copy this application and start it wherever you want a local server.
 
 Let me know if you've got any feedback about it or feature requests!
+
+##letsencrypt
+
+To use with letsencrypt, run the following command from the directory where letsencrypt is installed:
+
+    ./letsencrypt-auto certonly --webroot -w /var/www/mailgunner/ -d mailgun.example.com
+
+Once the certificate has been generated, uncomment the relevant lines in the nginx conf for the mailgun server.
+
+Don't forget to add a CNAME record for your domain.
+
+To auto renew the letsencrypt certificate (they expire every three months), add the following command to your crontab:
+
+    ./letsencrypt-auto certonly --renew --webroot -w /var/www/mailgunner/ -d mailgun.example.com
+
+If the certificat fails to generate, you may need to manually create the `.well-known` folder in the mailgunner root directory:
+
+    mkdir .well-known
+
+and then add the `acme-challenge` directory:
+
+    cd .well-known
+    mkdir acme-challenge
