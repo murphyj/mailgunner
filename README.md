@@ -107,7 +107,7 @@ To auto renew the letsencrypt certificate (they expire every three months), add 
 
     ./letsencrypt-auto certonly --renew --webroot -w /var/www/mailgunner/ -d mailgun.example.com
 
-If the certificat fails to generate, you may need to manually create the `.well-known` folder in the mailgunner root directory:
+If the certificate failed to generate, you may need to manually create the `.well-known` folder in the mailgunner root directory:
 
     mkdir .well-known
 
