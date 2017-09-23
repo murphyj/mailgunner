@@ -1,4 +1,4 @@
-#Mailgunner - A lightweight Node.js Mailgun Server
+# Mailgunner - A lightweight Node.js Mailgun Server
 
 Written to act as a lightweight API companion alongside other applications.
 
