@@ -59,7 +59,7 @@ I found that the default port `3030` didn't work for me (because I already had a
 PORT=3032 pm2 start bin/www.js --name mailgunner
 ```
 
-##API
+## API
 
 **POST** /api/submit/:mail
 
@@ -93,7 +93,7 @@ Let me know if you've got any feedback about it or feature requests!
 
 [HuBoard - Task Tracking](https://huboard.com/murphyj/mailgunner/)
 
-##letsencrypt
+## letsencrypt
 
 To use with letsencrypt, run the following command from the directory where letsencrypt is installed:
 
